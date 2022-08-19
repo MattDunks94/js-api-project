@@ -44,6 +44,7 @@ async function postForm(e) {
 
 };
 
+// Determines whether the API key is correct and if so execute displayStatus, otherwise displayErrors.
 async function getStatus(e) {
 
     const queryString = `${API_URL}?api_key=${API_KEY}`;
@@ -61,6 +62,7 @@ async function getStatus(e) {
 
 };
 
+// Displays no error message or error message along with total errors, error line, column and text, all within the modal.
 function displayErrors(data) {
 
     let results = "";
@@ -82,6 +84,7 @@ function displayErrors(data) {
     resultsModal.show();
 };
 
+// Displays modal heading and results, API key status and key expiration date.
 function displayStatus(data) {
 
     let heading = "API Key Status";
@@ -94,6 +97,7 @@ function displayStatus(data) {
 
 };
 
+// Displays modal heading and result, API status code, Error number and text.
 function displayException(data) {
 
     let heading = `An Exception Occured`;
